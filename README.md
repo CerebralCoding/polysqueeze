@@ -84,6 +84,17 @@ Copy `.env.example` to `.env` and fill in your wallet key plus any overrides
 (`POLY_CHAIN_ID`, `POLY_API_URL`, `POLY_FUNDER`, `POLY_TEST_TOKEN`). Only the
 private key is strictly required; the rest are optional fallbacks.
 
+`examples/wss_market.rs` shows how to consume the public MARKET channel for
+price/book updates. Set `POLY_WSS_MARKETS` and/or `POLY_WSS_ASSET_IDS` to the
+condition/asset IDs you care about, then run:
+
+```bash
+cargo run --example wss_market
+```
+
+The example prints `book`, `price_change`, `tick_size_change`, and
+`last_trade_price` events for the subscribed markets.
+
 ## Gamma and Data APIs
 
 Use the `client` module to call Gamma endpoints such as `/markets`, `/events`,

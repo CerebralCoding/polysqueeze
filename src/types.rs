@@ -1155,6 +1155,7 @@ pub struct SimplifiedMarketsResponse {
 /// Simplified market structure for batch operations
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SimplifiedMarket {
+    #[serde(default)]
     pub condition_id: String,
     pub tokens: [Token; 2],
     pub rewards: Rewards,
